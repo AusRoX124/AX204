@@ -41,15 +41,15 @@ function create() {
 		player.body.collideWorldBounds = true;
 
 	//enemy sprite
-	enemy = game.add.sprite(750, 20, 'baddie');
+	enemy1 = game.add.sprite(750, 20, 'baddie');
 		//animate
-		enemy.animations.add('left', [0, 1], 10, true);
-		enemy.animations.add('right', [2, 3], 10, true);
+		enemy1.animations.add('left', [0, 1], 10, true);
+		enemy1.animations.add('right', [2, 3], 10, true);
 		//physics
 		game.physics.arcade.enable(enemy);
-		enemy.body.bounce.y = 0.2;
-		enemy.body.gravity.y = 500;
-		enemy.body.collideWorldBounds = true;
+		enemy1.body.bounce.y = 0.2;
+		enemy1.body.gravity.y = 500;
+		enemy1.body.collideWorldBounds = true;
 
 	// keyboard inputs
 	cursors = game.input.keyboard.createCursorKeys();
