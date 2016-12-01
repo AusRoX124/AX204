@@ -24,7 +24,7 @@ function create() {
 	ground.body.immovable = true;
 
 	//ledges
-	var ledge = platforms.create(400, 400 'ground');
+	var ledge = platforms.create(400, 400, 'ground');
 	ledge.body.immovable = true;
 	ledge = platforms.create(-150, 250, 'ground');
 	ledge.body.immovable = true;
@@ -57,4 +57,24 @@ function create() {
 }
 
 function update() {
+	game.physics.arcade.collide(player, platforms);
+	game.physics.arcade.collide(enemy1, platforms);
+
+	if (cursors.left.isDown) {
+		player.body.velocity.x= -150;
+		player.animations.play("left");
+	}else if (cursors.right.isDown) {
+		player.body.velocity.x= 150;
+		player.animations.play("right");
+	}else {
+		player.animations.stop();
+		player.frame = 4;
+	}
+
+	if(cursors.up.isDown && player.body.touching.down) {
+		player.body.velocity.y =  -350;
+
+	}
 }
+
+
