@@ -4,8 +4,8 @@ function preload() {
 	game.load.image('sky', 'asset/sky.png');
 	game.load.image('ground', 'asset/platform.png');
 	game.load.image('star', 'asset/star.png')
-	game.load.spreitesheet('dude', 'assets/dude.png', 32, 48);
-	game.load.spreitesheet('baddie', 'assets/baddie.png', 32, 32);
+	game.load.spritesheet('dude', 'assets/dude.png', 32, 48);
+	game.load.spritesheet('baddie', 'assets/baddie.png', 32, 32);
 }
 
 function create() {
