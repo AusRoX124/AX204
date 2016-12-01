@@ -43,8 +43,8 @@ function create() {
 	//enemy sprite
 	enemy = game.add.sprite(750, 20, 'baddie');
 		//animate
-		enemy.animations.add('left', [0, 1] 10, true);
-		enemy.animations.add('right', [2, 3] 10, true);
+		enemy.animations.add('left', [0, 1], 10, true);
+		enemy.animations.add('right', [2, 3], 10, true);
 		//physics
 		game.physics.arcade.enable(enemy);
 		enemy.body.bounce.y = 0.2;
