@@ -15,7 +15,7 @@ function create() {
 	game.add.sprite(0,0,'sky');
 
 	//making a group of platforms
-	var platforms = game.add.physicsGroup();
+	platforms = game.add.physicsGroup();
 	platforms.enableBody = true;
 
 	//ground
@@ -52,7 +52,7 @@ function create() {
 		enemy.body.collideWorldBounds = true;
 
 	// keyboard inputs
-	cursors = game.input.keyboard.createCursorKeys();q
+	cursors = game.input.keyboard.createCursorKeys();
 
 }
 
