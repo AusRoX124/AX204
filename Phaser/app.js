@@ -1,9 +1,9 @@
 var game = new Phaser.Game(800, 600, Phaser.AUTO, '', { preload: preload, create: create, update: update });
 
 function preload() {
-	game.load.image('sky', 'asset/sky.png');
-	game.load.image('ground', 'asset/platform.png');
-	game.load.image('star', 'asset/star.png')
+	game.load.image('sky', 'assets/sky.png');
+	game.load.image('ground', 'assets/platform.png');
+	game.load.image('star', 'assets/star.png')
 	game.load.spritesheet('dude', 'assets/dude.png', 32, 48);
 	game.load.spritesheet('baddie', 'assets/baddie.png', 32, 32);
 }
@@ -46,7 +46,7 @@ function create() {
 		enemy1.animations.add('left', [0, 1], 10, true);
 		enemy1.animations.add('right', [2, 3], 10, true);
 		//physics
-		game.physics.arcade.enable(enemy);
+		game.physics.arcade.enable(enemy1);
 		enemy1.body.bounce.y = 0.2;
 		enemy1.body.gravity.y = 500;
 		enemy1.body.collideWorldBounds = true;
