@@ -85,7 +85,6 @@ function update() {
 	}else {
 		player.animations.stop();
 		player.frame = 4;
-		player.animations.play("right");
 	}
 
 	if(cursors.up.isDown && player.body.touching.down) {
