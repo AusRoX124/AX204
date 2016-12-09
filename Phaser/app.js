@@ -29,6 +29,18 @@ function create() {
 	ledge = platforms.create(-150, 250, 'ground');
 	ledge.body.immovable = true;
 
+
+	stars = game.add.group();
+
+	stars.enableBody = true;
+
+	for (var i=0; i<12; i++){
+
+		var star = stars.create(1*70, 0,'star');
+		star.body.gravity.y = 500;
+		star.body.bounce.y = 0.7+Math.random()*0.3;
+	}
+
 	//player sprite
 	player = game.add.sprite(32, game.world.height -150, 'dude');
 	//animate
@@ -74,6 +86,13 @@ function update() {
 	if(cursors.up.isDown && player.body.touching.down) {
 		player.body.velocity.y =  -350;
 
+	}
+
+
+	if (enemy1.x > 759) {
+		enemy1.body.velocity.x = -120;
+	} else if (enemy1.x <405) {
+		enemy1.body.velocity.x = 120;
 	}
 }
 
