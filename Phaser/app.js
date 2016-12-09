@@ -84,6 +84,7 @@ function update() {
 	}else {
 		player.animations.stop();
 		player.frame = 4;
+		player.animations.play("right");
 	}
 
 	if(cursors.up.isDown && player.body.touching.down) {
@@ -94,8 +95,10 @@ function update() {
 
 	if (enemy1.x > 759) {
 		enemy1.body.velocity.x = -120;
+		enemy1.animations.play("left");
 	} else if (enemy1.x <405) {
 		enemy1.body.velocity.x = 120;
+		enemy1.animations.play("right");
 	}
 }
 
