@@ -42,7 +42,7 @@ function create() {
 	}
 
 	//player sprite
-	player = game.add.sprite(32, game.world.height -150, 'dude');
+	player = game.add.sprite(32, 400, 'dude');
 	//animate
 		player.animations.add('left', [0, 1, 2, 3], 10, true);
 		player.animations.add('right', [5, 6, 7, 8], 10, true);
@@ -53,7 +53,7 @@ function create() {
 		player.body.collideWorldBounds = true;
 
 	//enemy sprite
-	enemy1 = game.add.sprite(750, 20, 'baddie');
+	enemy1 = game.add.sprite(760, 20, 'baddie');
 		//animate
 		enemy1.animations.add('left', [0, 1], 10, true);
 		enemy1.animations.add('right', [2, 3], 10, true);
@@ -72,6 +72,8 @@ function update() {
 	game.physics.arcade.collide(player, platforms);
 	game.physics.arcade.collide(enemy1, platforms);
 	game.physics.arcade.collide(stars, platforms);
+
+	player.body.velocity.x = 0;
 
 	if (cursors.left.isDown) {
 		player.body.velocity.x= -150;
