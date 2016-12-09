@@ -73,7 +73,7 @@ function update() {
 	game.physics.arcade.collide(enemy1, platforms);
 	game.physics.arcade.collide(stars, platforms);
 	//function "collectStar" will be called whenever the player walks over the stars
-	game.physics.arcade.overLap(player, stars, collectStar, null, this);
+	game.physics.arcade.overlap(player, stars, collectStar, null, this);
 	player.body.velocity.x = 0;
 
 	if (cursors.left.isDown) {
