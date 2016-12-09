@@ -1,4 +1,7 @@
+
 var game = new Phaser.Game(800, 600, Phaser.AUTO, '', { preload: preload, create: create, update: update });
+var score = 0;
+var scoreText;
 
 function preload() {
 	game.load.image('sky', 'assets/sky.png');
@@ -17,6 +20,8 @@ function create() {
 	//making a group of platforms
 	platforms = game.add.physicsGroup();
 	platforms.enableBody = true;
+
+	scoreText = game.add.text(16,16 'Score: 0', { fontSize: '32px', fill: '#000'});
 
 	//ground
 	var ground = platforms.create (0, game.world.height-64, 'ground');
@@ -105,7 +110,8 @@ function update() {
 		//removes the star from the screen
 		star.kill();
 		//add and update the score
-
+		score+=10;
+		scoreText.text = "Score: " +score;
 
 
 		star=stars.create(Math.floor(Math.random() * 750), 0, 'star');
