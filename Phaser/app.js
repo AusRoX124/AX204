@@ -21,7 +21,7 @@ function create() {
 	platforms = game.add.physicsGroup();
 	platforms.enableBody = true;
 
-	scoreText = game.add.text(16,16 'Score: 0', { fontSize: '32px', fill: '#000'});
+	scoreText = game.add.text(16,16, 'Score: 0', { fontSize: '32px', fill: '#000'});
 
 	//ground
 	var ground = platforms.create (0, game.world.height-64, 'ground');
