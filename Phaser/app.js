@@ -36,7 +36,7 @@ function create() {
 
 	for (var i=0; i<12; i++){
 
-		var star = stars.create(1*70, 0,'star');
+		var star = stars.create(i*70, 0,'star');
 		star.body.gravity.y = 500;
 		star.body.bounce.y = 0.7+Math.random()*0.3;
 	}
@@ -71,6 +71,7 @@ function create() {
 function update() {
 	game.physics.arcade.collide(player, platforms);
 	game.physics.arcade.collide(enemy1, platforms);
+	game.physics.arcade.collide(stars, platforms);
 
 	if (cursors.left.isDown) {
 		player.body.velocity.x= -150;
