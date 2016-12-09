@@ -72,7 +72,8 @@ function update() {
 	game.physics.arcade.collide(player, platforms);
 	game.physics.arcade.collide(enemy1, platforms);
 	game.physics.arcade.collide(stars, platforms);
-
+	//function "collectStar" will be called whenever the player walks over the stars
+	game.physics.arcade.overLap(player, stars, collectStar, null, this);
 	player.body.velocity.x = 0;
 
 	if (cursors.left.isDown) {
@@ -99,6 +100,18 @@ function update() {
 	} else if (enemy1.x <405) {
 		enemy1.body.velocity.x = 120;
 		enemy1.animations.play("right");
+	}
+
+	function collectStar (player,star) {
+		//removes the star from the screen
+		star.kill();
+		//add and update the score
+
+
+
+		star=stars.create(Math.floor(Math.random() * 750), 0, 'star');
+		star.body.gravity.y = 200;
+		star.body.bounce.y = 0.7 +Math.random() * 0.2;
 	}
 }
 
